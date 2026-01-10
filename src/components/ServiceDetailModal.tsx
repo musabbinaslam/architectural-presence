@@ -41,10 +41,10 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 z-10 rounded-full p-1.5 bg-secondary/80 hover:bg-secondary transition-colors"
+          className="absolute right-3 top-3 z-10 rounded-full p-2 bg-secondary hover:bg-destructive hover:text-destructive-foreground transition-colors border border-border"
           aria-label="Close"
         >
-          <X size={16} className="text-foreground/70" />
+          <X size={18} className="text-foreground" />
         </button>
 
         {/* Header */}
@@ -144,7 +144,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
           </div>
 
           {/* CTA */}
-          <div className="pt-3 border-t border-border">
+          <div className="pt-3 border-t border-border flex items-center justify-between gap-3">
             <a
               href="#contact"
               onClick={onClose}
@@ -153,6 +153,12 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
               Get a Quote
               <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
+            <button
+              onClick={onClose}
+              className="inline-flex items-center gap-2 px-4 py-2 tracking-widest uppercase text-[10px] font-semibold text-muted-foreground hover:text-foreground border border-border hover:border-foreground/30 transition-all duration-300 rounded"
+            >
+              Close
+            </button>
           </div>
         </div>
       </DialogContent>
