@@ -4,8 +4,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const contactDetails = [{
   icon: Mail,
   label: "Email",
-  content: "info@insyncpk.com",
-  href: "mailto:info@insyncpk.com"
+  content: "insyncconstruction@gmail.com",
+  href: "mailto:insyncconstruction@gmail.com"
 }, {
   icon: Phone,
   label: "Phone",
