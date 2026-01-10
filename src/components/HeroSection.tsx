@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-construction.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -11,25 +11,26 @@ const HeroSection = () => {
           alt="Modern construction site with professional workers"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/40" />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 section-padding w-full">
-        <div className="max-w-4xl">
+      <div className="relative z-10 section-padding w-full pt-32">
+        <div className="max-w-2xl">
           {/* Eyebrow */}
-          <p className="text-foreground/60 tracking-[0.3em] uppercase text-xs mb-6 animate-fade-up">
+          <p className="text-foreground/80 tracking-[0.3em] uppercase text-xs mb-6 animate-fade-up font-medium">
             Professional Construction Since 2018
           </p>
 
           {/* Main Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 animate-fade-up text-foreground" style={{ animationDelay: "0.1s" }}>
             Building with<br />
             <span className="text-primary">Precision</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-lg md:text-xl text-foreground/70 max-w-xl mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-foreground/80 max-w-xl mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
             We deliver high-quality residential and commercial construction through 
             disciplined planning, skilled execution, and uncompromising standards.
           </p>
