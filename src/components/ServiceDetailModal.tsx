@@ -1,10 +1,11 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 
 export interface ServiceDetail {
@@ -28,21 +29,32 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-md max-h-[80vh] overflow-y-auto bg-background border-border p-0 shadow-2xl shadow-black/40 rounded-xl">
+      <DialogContent className="w-[calc(100vw-32px)] max-w-md max-h-[80vh] overflow-y-auto overflow-x-hidden bg-background border-border p-0 shadow-2xl shadow-black/40 rounded-xl [&>button]:hidden">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute right-3 top-3 z-10 rounded-full p-1.5 bg-secondary/80 hover:bg-secondary transition-colors"
+          aria-label="Close"
+        >
+          <X size={16} className="text-foreground/70" />
+        </button>
+
         {/* Header */}
-        <DialogHeader className="p-5 pb-0">
+        <DialogHeader className="p-5 pb-0 pr-12">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-secondary flex items-center justify-center shrink-0 rounded-lg">
               <service.icon size={20} className="text-primary" />
             </div>
-            <div>
+            <div className="min-w-0">
               <span className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground block mb-1">
                 Service {service.id}
               </span>
               <DialogTitle className="font-display text-lg md:text-xl">
                 {service.title}
               </DialogTitle>
-              <p className="text-primary/80 text-xs mt-0.5">{service.subtitle}</p>
+              <DialogDescription className="text-primary/80 text-xs mt-0.5">
+                {service.subtitle}
+              </DialogDescription>
             </div>
           </div>
         </DialogHeader>
