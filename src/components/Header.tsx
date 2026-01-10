@@ -45,7 +45,7 @@ const Header = () => {
               <span style={{ color: '#34a474' }}>I</span>n<span style={{ color: '#dd312d' }}>S</span>ync
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-              Construction
+              <span style={{ color: '#dd312d' }}>C</span>onstruction
             </span>
           </div>
         </Link>
