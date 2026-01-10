@@ -35,7 +35,15 @@ const Header = () => {
       <div className="section-padding flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="InSync Construction" className="h-16 w-auto" />
+          <img src={logo} alt="InSync Construction" className="h-14 w-auto" />
+          <div className="flex flex-col">
+            <span className="font-display text-xl tracking-tight leading-none">
+              InSync
+            </span>
+            <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+              Construction
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
