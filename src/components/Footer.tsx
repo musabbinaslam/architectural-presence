@@ -172,7 +172,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-accent-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-accent-foreground/40">
-              © {currentYear} INSYNC Construction. All rights reserved.
+              © {currentYear} InSync Construction. All rights reserved.
             </p>
             <div className="flex gap-8">
               <a href="#" className="text-xs text-accent-foreground/40 hover:text-accent-foreground transition-colors">
