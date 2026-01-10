@@ -36,7 +36,14 @@ const Header = () => {
     >
       <div className="section-padding flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <a 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-3 group"
+        >
           <img 
             src={logo} 
             alt="InSync Construction Company" 
@@ -50,7 +57,7 @@ const Header = () => {
               <span style={{ color: '#dd312d' }}>C</span>onstruction
             </span>
           </div>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
