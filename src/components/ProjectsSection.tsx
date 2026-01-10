@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import projectResidential1 from "@/assets/project-residential-1.jpg";
-import projectResidential2 from "@/assets/project-residential-2.jpg";
-import projectCommercial1 from "@/assets/project-commercial-1.jpg";
+import projectModern from "@/assets/project-modern.jpg";
+import projectClassical from "@/assets/project-classical.jpg";
+import projectCommercial from "@/assets/project-commercial.jpg";
 
 const projects = [
   {
@@ -10,7 +10,7 @@ const projects = [
     style: "Contemporary Modern",
     type: "Residential",
     plotSize: "1 Kanal Standard",
-    image: projectResidential1,
+    image: projectModern,
     features: ["Double-height Atrium", "Smart Glass", "Green Roof"],
     philosophy: "This concept showcases our ability to design for modern living. The layout prioritizes open-plan spaces, natural light, and energy efficiency with clean lines and minimalist facade.",
   },
@@ -20,7 +20,7 @@ const projects = [
     style: "Spanish / Mediterranean",
     type: "Residential",
     plotSize: "2 Kanal Estate",
-    image: projectResidential2,
+    image: projectClassical,
     features: ["Terracotta Tiles", "Arched Windows", "Wrought Iron Details"],
     philosophy: "A timeless design aesthetic tailored for clients who value elegance and grandeur, featuring traditional Spanish elements with a grand central courtyard.",
   },
@@ -30,7 +30,7 @@ const projects = [
     style: "Industrial Chic",
     type: "Commercial",
     plotSize: "Tech Hubs / Coworking Spaces",
-    image: projectCommercial1,
+    image: projectCommercial,
     features: ["Acoustic Paneling", "Exposed Ceilings", "Modular Pods"],
     philosophy: "An interior concept focused on productivity and collaboration, showcasing expertise in dry-wall partitioning, custom joinery, and ergonomic lighting design.",
   },

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,17 +35,7 @@ const Header = () => {
       <div className="section-padding flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-display text-lg font-bold">IN</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display text-xl tracking-tight leading-none">
-              INSYNC
-            </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-              Construction
-            </span>
-          </div>
+          <img src={logo} alt="InSync Construction" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
