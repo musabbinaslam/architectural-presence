@@ -16,12 +16,22 @@ const DownloadSection = () => {
           projects, and capabilities.
         </p>
         
-        <a href="/INSYNC-Company-Profile.pdf" download="INSYNC-Company-Profile.pdf" className="inline-block">
-          <Button variant="hero" size="xl" className="gap-3">
-            <Download className="w-5 h-5" />
-            Download Profile
-          </Button>
-        </a>
+        <Button 
+          variant="hero" 
+          size="xl" 
+          className="gap-3"
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = '/INSYNC-Company-Profile.pdf';
+            link.download = 'INSYNC-Company-Profile.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+        >
+          <Download className="w-5 h-5" />
+          Download Profile
+        </Button>
         
         
       </div>
