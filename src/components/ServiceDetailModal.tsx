@@ -7,6 +7,13 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export interface ServiceDetail {
   id: string;
@@ -16,6 +23,7 @@ export interface ServiceDetail {
   highlights: string[];
   capabilities: string[];
   icon: LucideIcon;
+  images?: string[];
 }
 
 interface ServiceDetailModalProps {
@@ -61,6 +69,38 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
 
         {/* Content */}
         <div className="p-5 space-y-5">
+          {/* Image Carousel */}
+          {service.images && service.images.length > 0 && (
+            <div className="relative -mx-5 px-5">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2">
+                  {service.images.map((image, index) => (
+                    <CarouselItem key={index} className="pl-2 basis-full">
+                      <div className="overflow-hidden rounded-lg border border-border">
+                        <img
+                          src={image}
+                          alt={`${service.title} - Image ${index + 1}`}
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="-left-2 h-8 w-8 bg-secondary/80 border-border hover:bg-secondary" />
+                <CarouselNext className="-right-2 h-8 w-8 bg-secondary/80 border-border hover:bg-secondary" />
+              </Carousel>
+              <p className="text-center text-[10px] text-muted-foreground mt-2">
+                {service.images.length} images • Swipe to view
+              </p>
+            </div>
+          )}
+
           {/* Description */}
           <div>
             <p className="text-foreground/70 leading-relaxed text-sm">

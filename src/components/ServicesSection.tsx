@@ -3,6 +3,18 @@ import { ArrowRight, Palette, Hammer, ClipboardList, RefreshCw, Map } from "luci
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ServiceDetailModal, { ServiceDetail } from "@/components/ServiceDetailModal";
 
+// GIS Images
+import gis1 from "@/assets/gis/gis-1.png";
+import gis2 from "@/assets/gis/gis-2.png";
+import gis3 from "@/assets/gis/gis-3.png";
+import gis4 from "@/assets/gis/gis-4.png";
+import gis5 from "@/assets/gis/gis-5.png";
+import gis6 from "@/assets/gis/gis-6.png";
+import gis7 from "@/assets/gis/gis-7.png";
+import gis8 from "@/assets/gis/gis-8.png";
+import gis9 from "@/assets/gis/gis-9.jpg";
+
+const gisImages = [gis1, gis2, gis3, gis4, gis5, gis6, gis7, gis8, gis9];
 const services = [
   {
     id: "01",
@@ -157,6 +169,7 @@ const serviceDetails: Record<string, Omit<ServiceDetail, "icon">> = {
       "Topographical Surveys",
       "Land Use Planning",
     ],
+    images: gisImages,
   },
 };
 
