@@ -9,8 +9,8 @@ const contactDetails = [{
 }, {
   icon: Phone,
   label: "Phone",
-  content: "+92 300 9204444",
-  href: "tel:+923009204444"
+  content: "",
+  href: "tel:"
 }, {
   icon: MapPin,
   label: "Islamabad Office",
