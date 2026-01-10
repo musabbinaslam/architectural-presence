@@ -26,18 +26,22 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm py-4"
+          ? "bg-background/95 backdrop-blur-md py-4 shadow-subtle"
           : "bg-transparent py-6"
       }`}
     >
       <div className="section-padding flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="InSync Construction" className="h-14 w-auto" />
+          <img 
+            src={logo} 
+            alt="InSync Construction" 
+            className="h-14 w-auto transition-transform duration-500 group-hover:scale-105" 
+          />
           <div className="flex flex-col">
-            <span className="font-display text-xl tracking-tight leading-none">
+            <span className="font-display text-xl tracking-tight leading-none transition-colors duration-300 group-hover:text-primary">
               InSync
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
@@ -48,11 +52,12 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-foreground/60 hover:text-foreground tracking-widest uppercase text-[11px] font-medium transition-colors duration-300"
+              className="text-foreground/60 hover:text-foreground tracking-widest uppercase text-[11px] font-medium transition-all duration-300 link-underline"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
               {link.name}
             </a>
@@ -60,40 +65,73 @@ const Header = () => {
         </nav>
 
         {/* CTA Button */}
-        <Button variant="terracotta" size="sm" className="hidden md:flex">
-          Get a Quote
+        <Button 
+          variant="terracotta" 
+          size="sm" 
+          className="hidden md:flex group magnetic-hover"
+        >
+          <span className="relative z-10">Get a Quote</span>
         </Button>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 transition-transform duration-300 active:scale-95"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <div className="relative w-6 h-6">
+            <Menu 
+              size={24} 
+              className={`absolute inset-0 transition-all duration-300 ${
+                isMobileMenuOpen ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
+              }`} 
+            />
+            <X 
+              size={24} 
+              className={`absolute inset-0 transition-all duration-300 ${
+                isMobileMenuOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"
+              }`} 
+            />
+          </div>
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-t border-border animate-fade-up">
-          <nav className="section-padding py-8 flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-foreground/70 hover:text-foreground tracking-widest uppercase text-sm font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button variant="terracotta" size="lg" className="mt-4">
-              Get a Quote
-            </Button>
-          </nav>
-        </div>
-      )}
+      <div 
+        className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md border-t border-border overflow-hidden transition-all duration-500 ease-out ${
+          isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="section-padding py-8 flex flex-col gap-6">
+          {navLinks.map((link, index) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`text-foreground/70 hover:text-foreground tracking-widest uppercase text-sm font-medium transition-all duration-500 ${
+                isMobileMenuOpen 
+                  ? "opacity-100 translate-x-0" 
+                  : "opacity-0 -translate-x-4"
+              }`}
+              style={{ transitionDelay: isMobileMenuOpen ? `${index * 50 + 100}ms` : "0ms" }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <Button 
+            variant="terracotta" 
+            size="lg" 
+            className={`mt-4 transition-all duration-500 ${
+              isMobileMenuOpen 
+                ? "opacity-100 translate-y-0" 
+                : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: isMobileMenuOpen ? "350ms" : "0ms" }}
+          >
+            Get a Quote
+          </Button>
+        </nav>
+      </div>
     </header>
   );
 };
