@@ -61,12 +61,20 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <Link to="/" className="inline-block mb-6">
+              <Link to="/" className="inline-flex items-center gap-4 mb-6">
                 <img 
                   src={logoFooter} 
                   alt="InSync Construction Company" 
-                  className="h-20 w-auto"
+                  className="h-16 w-auto"
                 />
+                <div className="flex flex-col">
+                  <span className="font-display text-2xl tracking-tight leading-none">
+                    InSync
+                  </span>
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-accent-foreground/50">
+                    Construction
+                  </span>
+                </div>
               </Link>
               <p className="text-accent-foreground/60 text-sm leading-relaxed max-w-sm mb-6">
                 Building with Precision. Professional construction services for 
