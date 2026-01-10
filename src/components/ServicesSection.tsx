@@ -13,8 +13,18 @@ import gis6 from "@/assets/gis/gis-6.png";
 import gis7 from "@/assets/gis/gis-7.png";
 import gis8 from "@/assets/gis/gis-8.png";
 import gis9 from "@/assets/gis/gis-9.jpg";
+import gis10 from "@/assets/gis/gis-10.jpg";
+import gis11 from "@/assets/gis/gis-11.jpg";
+import gis12 from "@/assets/gis/gis-12.jpg";
+import gis13 from "@/assets/gis/gis-13.png";
+import gis14 from "@/assets/gis/gis-14.png";
+import gis15 from "@/assets/gis/gis-15.png";
+import gis16 from "@/assets/gis/gis-16.png";
+import gis17 from "@/assets/gis/gis-17.png";
+import gis18 from "@/assets/gis/gis-18.png";
+import gis19 from "@/assets/gis/gis-19.png";
 
-const gisImages = [gis1, gis2, gis3, gis4, gis5, gis6, gis7, gis8, gis9];
+const gisImages = [gis1, gis2, gis3, gis4, gis5, gis6, gis7, gis8, gis9, gis10, gis11, gis12, gis13, gis14, gis15, gis16, gis17, gis18, gis19];
 const services = [
   {
     id: "01",
