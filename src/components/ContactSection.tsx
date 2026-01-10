@@ -13,7 +13,7 @@ const contactDetails = [{
   href: "tel:"
 }, {
   icon: MapPin,
-  label: "Islamabad Office",
+  label: "Islamabad Office, Pakistan",
   content: "191, Street 98\nSector I-8/4, Islamabad",
   isAddress: true
 }, {
