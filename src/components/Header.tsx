@@ -35,7 +35,7 @@ const Header = () => {
       <div className="section-padding flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="InSync Construction" className="h-12 w-auto" />
+          <img src={logo} alt="InSync Construction" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
