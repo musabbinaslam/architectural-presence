@@ -3,69 +3,51 @@ import projectResidential1 from "@/assets/project-residential-1.jpg";
 import projectResidential2 from "@/assets/project-residential-2.jpg";
 import projectCommercial1 from "@/assets/project-commercial-1.jpg";
 import projectRenovation1 from "@/assets/project-renovation-1.jpg";
-import project5 from "@/assets/project-5.jpg";
-import project6 from "@/assets/project-6.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "Modern Villa F-7",
-    location: "Islamabad, Pakistan",
+    title: "Modern Residence",
+    location: "Contemporary Modern",
     type: "Residential",
-    year: "2024",
-    value: "1 Kanal",
+    year: "1 Kanal",
+    value: "Design Capability",
     image: projectResidential1,
     featured: true,
+    features: ["Double-height Atrium", "Smart Glass", "Green Roof"],
   },
   {
     id: 2,
-    title: "Mediterranean Estate",
-    location: "DHA Phase 6, Lahore",
+    title: "Classical Residence",
+    location: "Spanish / Mediterranean",
     type: "Residential",
-    year: "2024",
-    value: "2 Kanal",
+    year: "2 Kanal Estate",
+    value: "Design Capability",
     image: projectResidential2,
-    featured: false,
+    featured: true,
+    features: ["Terracotta Tiles", "Arched Windows", "Wrought Iron Details"],
   },
   {
     id: 3,
-    title: "Corporate Office Fit-out",
-    location: "Blue Area, Islamabad",
+    title: "Corporate Interior Fit-out",
+    location: "Tech Hubs / Coworking Spaces",
     type: "Commercial",
-    year: "2023",
-    value: "15,000 sqft",
+    year: "Industrial Chic",
+    value: "Interior Design",
     image: projectCommercial1,
     featured: true,
+    features: ["Acoustic Paneling", "Exposed Ceilings", "Modular Pods"],
   },
   {
     id: 4,
-    title: "Heritage Home Renovation",
-    location: "Gulberg, Lahore",
+    title: "Renovation & Retrofitting",
+    location: "Existing Structures",
     type: "Renovation",
-    year: "2023",
-    value: "Complete Overhaul",
+    year: "Specialized",
+    value: "System Upgrades",
     image: projectRenovation1,
     featured: false,
-  },
-  {
-    id: 5,
-    title: "Contemporary Residence",
-    location: "Bahria Town, Islamabad",
-    type: "Residential",
-    year: "2023",
-    value: "10 Marla",
-    image: project5,
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Retail Plaza Interior",
-    location: "Multan",
-    type: "Commercial",
-    year: "2022",
-    value: "8,000 sqft",
-    image: project6,
-    featured: true,
+    features: ["Structural Assessment", "Controlled Demolition", "MEP Upgrades"],
   },
 ];
 
@@ -78,16 +60,16 @@ const ProjectsSection = () => {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
               <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4">
-                Our Work
+                Portfolio
               </span>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl">
-                Projects
+                Projects & Capabilities
               </h2>
             </div>
             <div className="max-w-md">
               <p className="text-foreground/60 md:text-right">
-                A selection of completed projects that showcase our commitment 
-                to quality construction and client satisfaction.
+                Our design capabilities demonstrate versatility across modern, 
+                classical, and commercial aesthetics—from concept to keys.
               </p>
               {/* Filter tabs */}
               <div className="flex gap-6 mt-6 md:justify-end">
@@ -106,7 +88,7 @@ const ProjectsSection = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
             {projects.map((project, index) => (
               <article
                 key={project.id}
@@ -114,10 +96,10 @@ const ProjectsSection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-muted mb-6">
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted mb-6">
                   <img
                     src={project.image}
-                    alt={`${project.title} - ${project.type} in ${project.location}`}
+                    alt={`${project.title} - ${project.type}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Overlay on Hover */}
@@ -135,14 +117,14 @@ const ProjectsSection = () => {
                     <ArrowUpRight size={18} className="text-foreground" />
                   </div>
 
-                  {/* Value Badge */}
-                  <div className="absolute bottom-4 left-4 bg-background/90 px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Type Badge */}
+                  <div className="absolute bottom-4 left-4 bg-background/90 px-3 py-2">
                     <span className="font-display text-lg">{project.value}</span>
                   </div>
                 </div>
 
                 {/* Project Info */}
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="font-display text-xl md:text-2xl mb-1 group-hover:text-primary transition-colors duration-300">
                       {project.title}
@@ -156,23 +138,64 @@ const ProjectsSection = () => {
                   </span>
                 </div>
                 
-                <div className="flex items-center gap-2 mt-3">
+                <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 bg-primary/30" />
                   <p className="text-xs tracking-[0.15em] uppercase text-foreground/50">
                     {project.type}
                   </p>
                 </div>
+
+                {/* Features */}
+                <div className="flex flex-wrap gap-2">
+                  {project.features.map((feature) => (
+                    <span 
+                      key={feature}
+                      className="text-[10px] tracking-[0.1em] uppercase text-muted-foreground bg-secondary px-3 py-1.5"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
 
+          {/* GIS Capability Note */}
+          <div className="mt-16 p-8 md:p-12 bg-card border border-border">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-primary block mb-3">
+                  GIS Capability
+                </span>
+                <h3 className="font-display text-2xl md:text-3xl mb-4">
+                  Geographic Information Systems
+                </h3>
+                <p className="text-foreground/60">
+                  With over 32 years of collective expertise in geospatial analysis, 
+                  we've delivered large-scale cadastral and GIS projects for the 
+                  Government of Balochistan and projects in Saudi Arabia.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3 md:justify-end">
+                {["Cadastral Mapping", "Spatial Analysis", "Land Records", "Urban Planning"].map((service) => (
+                  <span 
+                    key={service}
+                    className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground bg-secondary px-4 py-2"
+                  >
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* View All Link */}
-          <div className="flex justify-center mt-20">
+          <div className="flex justify-center mt-16">
             <a
-              href="#"
+              href="#contact"
               className="group inline-flex items-center gap-4 text-sm tracking-[0.2em] uppercase text-foreground/60 hover:text-foreground transition-colors duration-300 border-b border-foreground/20 pb-2 hover:border-foreground/50"
             >
-              View All Projects
+              Discuss Your Project
               <ArrowUpRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
