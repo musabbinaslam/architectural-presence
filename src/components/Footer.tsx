@@ -7,20 +7,21 @@ const Footer = () => {
   const footerLinks = {
     explore: [
       { name: "About", href: "#about" },
-      { name: "Projects", href: "#projects" },
       { name: "Services", href: "#services" },
+      { name: "Projects", href: "#projects" },
+      { name: "Team", href: "#team" },
       { name: "Contact", href: "#contact" },
     ],
     services: [
-      { name: "Land Acquisition", href: "#services" },
-      { name: "Property Development", href: "#services" },
-      { name: "Investment Advisory", href: "#services" },
-      { name: "Asset Management", href: "#services" },
+      { name: "Design & Visualization", href: "#services" },
+      { name: "Engineering & Construction", href: "#services" },
+      { name: "Project Management", href: "#services" },
+      { name: "Renovation Services", href: "#services" },
     ],
     social: [
       { name: "LinkedIn", href: "#" },
       { name: "Instagram", href: "#" },
-      { name: "Twitter", href: "#" },
+      { name: "Facebook", href: "#" },
     ],
   };
 
@@ -32,10 +33,10 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="font-display text-2xl md:text-3xl mb-2">
-                Stay Informed
+                Stay Updated
               </h3>
               <p className="text-accent-foreground/60">
-                Receive updates on new developments and investment opportunities.
+                Receive updates on our latest projects and construction insights.
               </p>
             </div>
             <div className="flex gap-4">
@@ -61,20 +62,31 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <Link to="/" className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-display text-xl">B</span>
+                  <span className="text-primary-foreground font-display text-lg font-bold">IN</span>
                 </div>
-                <span className="font-display text-2xl tracking-tight">
-                  Bricks & Land
-                </span>
+                <div className="flex flex-col">
+                  <span className="font-display text-2xl tracking-tight leading-none">
+                    INSYNC
+                  </span>
+                  <span className="text-[10px] tracking-[0.15em] uppercase text-accent-foreground/50">
+                    Construction
+                  </span>
+                </div>
               </Link>
               <p className="text-accent-foreground/60 text-sm leading-relaxed max-w-sm mb-6">
-                Building foundations that last. Property development and investment 
-                for those who value substance over spectacle. Established 2009.
+                Building with Precision. Professional construction services for 
+                residential and commercial projects. Quality, safety, and excellence 
+                since 2018.
               </p>
-              <address className="text-sm not-italic text-accent-foreground/50">
-                12 Foundation House<br />
-                London EC2A 4BX, UK
-              </address>
+              <div className="space-y-2">
+                <address className="text-sm not-italic text-accent-foreground/50">
+                  191, Street 98, Sector I-8/4<br />
+                  Islamabad, Pakistan
+                </address>
+                <p className="text-sm text-accent-foreground/50">
+                  PEC Certified | ISO 9001
+                </p>
+              </div>
             </div>
 
             {/* Explore */}
@@ -139,10 +151,16 @@ const Footer = () => {
                   Contact
                 </p>
                 <a 
-                  href="mailto:hello@bricksandland.com"
+                  href="mailto:info@insyncpk.com"
+                  className="text-sm text-accent-foreground/70 hover:text-primary transition-colors block mb-2"
+                >
+                  info@insyncpk.com
+                </a>
+                <a 
+                  href="tel:+923009204444"
                   className="text-sm text-accent-foreground/70 hover:text-primary transition-colors"
                 >
-                  hello@bricksandland.com
+                  +92 300 9204444
                 </a>
               </div>
             </div>
@@ -151,7 +169,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-accent-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-accent-foreground/40">
-              © {currentYear} Bricks & Land Ltd. All rights reserved. Company No. 12345678
+              © {currentYear} INSYNC Construction. All rights reserved.
             </p>
             <div className="flex gap-8">
               <a href="#" className="text-xs text-accent-foreground/40 hover:text-accent-foreground transition-colors">
@@ -159,9 +177,6 @@ const Footer = () => {
               </a>
               <a href="#" className="text-xs text-accent-foreground/40 hover:text-accent-foreground transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="text-xs text-accent-foreground/40 hover:text-accent-foreground transition-colors">
-                Cookie Policy
               </a>
             </div>
           </div>

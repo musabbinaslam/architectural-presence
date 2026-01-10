@@ -2,18 +2,18 @@ const PhilosophySection = () => {
   const values = [
     {
       number: "01",
-      title: "Permanence",
-      description: "We build for generations, not quarters. Every decision is weighed against the test of time.",
+      title: "Integrity",
+      description: "We uphold the highest standards of honesty. Our contracts and costs are transparent—no hidden charges, no surprises.",
     },
     {
       number: "02", 
-      title: "Integrity",
-      description: "Honest materials, honest relationships. We say what we do and do what we say.",
+      title: "Safety",
+      description: "Human life is invaluable. We prioritize a safe working environment for our team and implement rigorous safety protocols on every site.",
     },
     {
       number: "03",
-      title: "Craft",
-      description: "Excellence in execution. From foundation to finish, every detail matters.",
+      title: "Precision",
+      description: "Every project is executed with technical accuracy, disciplined planning, and controlled delivery. Excellence in every detail.",
     },
   ];
 
@@ -32,13 +32,14 @@ const PhilosophySection = () => {
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
               Built on principles,<br />
-              <span className="text-primary italic">not trends.</span>
+              <span className="text-primary italic">not shortcuts.</span>
             </h2>
           </div>
           <div className="flex items-end">
             <p className="text-foreground/60 leading-relaxed text-lg max-w-md">
-              In an industry often driven by short-term gains, we take the long view. 
-              Our approach is rooted in values that have guided great builders for centuries.
+              At INSYNC, we believe that exceptional construction is the result of 
+              unwavering commitment to our core values. These principles guide every 
+              decision we make.
             </p>
           </div>
         </div>
@@ -76,15 +77,15 @@ const PhilosophySection = () => {
         <div className="mt-24 pt-16 border-t border-border">
           <blockquote className="max-w-3xl">
             <p className="font-display text-2xl md:text-3xl lg:text-4xl leading-snug text-foreground/80 mb-8">
-              "The work will praise the master. We let our buildings speak for themselves."
+              "Our commitment to quality is not a marketing slogan—it's the foundation of everything we build."
             </p>
             <footer className="flex items-center gap-4">
               <div className="w-12 h-12 bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-display text-lg">JM</span>
+                <span className="text-accent-foreground font-display text-lg">AT</span>
               </div>
               <div>
-                <p className="font-medium">James Morrison</p>
-                <p className="text-sm text-muted-foreground">Founder & Principal</p>
+                <p className="font-medium">Arham Tahir Awan</p>
+                <p className="text-sm text-muted-foreground">Chairman, INSYNC Construction</p>
               </div>
             </footer>
           </blockquote>

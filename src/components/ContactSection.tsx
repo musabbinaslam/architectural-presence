@@ -16,11 +16,11 @@ const ContactSection = () => {
               Get In Touch
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
-              Let's Build<br />Something<br /><span className="text-primary italic">Lasting</span>
+              Let's Build<br />Something<br /><span className="text-primary italic">Great</span>
             </h2>
             <p className="text-foreground/60 leading-relaxed max-w-md mb-12 text-lg">
-              Whether you're looking to invest, develop, or simply explore 
-              opportunities in property, we'd like to hear from you.
+              Whether you're planning a new construction, renovation, or just want 
+              to explore possibilities, we'd love to hear from you.
             </p>
 
             {/* Contact Details */}
@@ -34,10 +34,10 @@ const ContactSection = () => {
                     Email
                   </p>
                   <a
-                    href="mailto:hello@bricksandland.com"
+                    href="mailto:info@insyncpk.com"
                     className="text-lg hover:text-primary transition-colors duration-300"
                   >
-                    hello@bricksandland.com
+                    info@insyncpk.com
                   </a>
                 </div>
               </div>
@@ -51,10 +51,10 @@ const ContactSection = () => {
                     Phone
                   </p>
                   <a
-                    href="tel:+442012345678"
+                    href="tel:+923009204444"
                     className="text-lg hover:text-primary transition-colors duration-300"
                   >
-                    +44 (0) 20 1234 5678
+                    +92 300 9204444
                   </a>
                 </div>
               </div>
@@ -65,12 +65,26 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">
-                    Address
+                    Islamabad Office
                   </p>
                   <address className="text-lg not-italic text-foreground/80">
-                    12 Foundation House<br />
-                    London EC2A 4BX<br />
-                    United Kingdom
+                    191, Street 98<br />
+                    Sector I-8/4, Islamabad
+                  </address>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-secondary flex items-center justify-center flex-shrink-0">
+                  <MapPin size={18} className="text-primary" />
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                    Multan Office
+                  </p>
+                  <address className="text-lg not-italic text-foreground/80">
+                    43, Block V<br />
+                    Gulzar Khalil Piran Ghaib Road, Multan
                   </address>
                 </div>
               </div>
@@ -84,8 +98,8 @@ const ContactSection = () => {
                     Office Hours
                   </p>
                   <p className="text-lg text-foreground/80">
-                    Mon – Fri: 9:00 – 18:00<br />
-                    Sat: By Appointment
+                    Mon – Sat: 9:00 – 18:00<br />
+                    Sun: Closed
                   </p>
                 </div>
               </div>
@@ -94,9 +108,9 @@ const ContactSection = () => {
 
           {/* Right Column - Form */}
           <div className="bg-card p-8 md:p-12 border border-border">
-            <h3 className="font-display text-2xl mb-2">Start a Conversation</h3>
+            <h3 className="font-display text-2xl mb-2">Request a Quote</h3>
             <p className="text-muted-foreground text-sm mb-8">
-              Fill out the form below and we'll get back to you within 24 hours.
+              Tell us about your project and we'll get back to you within 24 hours.
             </p>
             
             <form className="space-y-6">
@@ -108,7 +122,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground placeholder:text-muted-foreground"
-                    placeholder="John"
+                    placeholder="Ahmed"
                   />
                 </div>
                 <div>
@@ -118,7 +132,7 @@ const ContactSection = () => {
                   <input
                     type="text"
                     className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground placeholder:text-muted-foreground"
-                    placeholder="Smith"
+                    placeholder="Khan"
                   />
                 </div>
               </div>
@@ -130,43 +144,44 @@ const ContactSection = () => {
                 <input
                   type="email"
                   className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground placeholder:text-muted-foreground"
-                  placeholder="john@example.com"
+                  placeholder="ahmed@example.com"
                 />
               </div>
 
               <div>
                 <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3">
-                  Phone Number
+                  Phone Number *
                 </label>
                 <input
                   type="tel"
                   className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground placeholder:text-muted-foreground"
-                  placeholder="+44 7000 000000"
+                  placeholder="+92 300 0000000"
                 />
               </div>
 
               <div>
                 <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3">
-                  Area of Interest *
+                  Project Type *
                 </label>
                 <select className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground appearance-none cursor-pointer">
-                  <option value="">Select your interest</option>
-                  <option value="investment">Property Investment</option>
-                  <option value="development">Development Opportunities</option>
-                  <option value="land">Land Acquisition</option>
-                  <option value="advisory">Advisory Services</option>
-                  <option value="other">Other Inquiry</option>
+                  <option value="">Select project type</option>
+                  <option value="residential-new">Residential - New Construction</option>
+                  <option value="residential-renovation">Residential - Renovation</option>
+                  <option value="commercial-new">Commercial - New Construction</option>
+                  <option value="commercial-fitout">Commercial - Fit-out</option>
+                  <option value="interior">Interior Design</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
 
               <div>
                 <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3">
-                  Message *
+                  Project Details *
                 </label>
                 <textarea
                   rows={4}
                   className="w-full bg-background border border-border px-4 py-3 focus:border-primary outline-none transition-colors text-foreground placeholder:text-muted-foreground resize-none"
-                  placeholder="Tell us about your project or inquiry..."
+                  placeholder="Tell us about your project, location, plot size, budget range..."
                 />
               </div>
 
@@ -177,13 +192,13 @@ const ContactSection = () => {
                   size="xl"
                   className="w-full"
                 >
-                  Send Inquiry
+                  Submit Request
                   <ArrowUpRight size={16} />
                 </Button>
               </div>
               
               <p className="text-xs text-muted-foreground text-center">
-                By submitting this form, you agree to our Privacy Policy.
+                Your information is secure. We never share your data with third parties.
               </p>
             </form>
           </div>

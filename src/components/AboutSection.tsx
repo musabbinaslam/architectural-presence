@@ -16,38 +16,38 @@ const AboutSection = () => {
             
             {/* Large decorative text */}
             <p className="font-display text-8xl md:text-9xl text-primary/10 leading-none hidden md:block">
-              B&L
+              IN
             </p>
           </div>
 
           {/* Right Column - Content */}
           <div className="space-y-8">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
-              We believe in the enduring value of <span className="text-primary italic">well-built</span> spaces.
+              Process over <span className="text-primary italic">Promise</span>
             </h2>
             
             <div className="space-y-6 text-foreground/70 leading-relaxed">
               <p className="text-lg">
-                Bricks & Land was founded on a simple principle: property should be more than 
-                a transaction—it should be a legacy. We approach every project with the 
-                patience and precision of master builders.
+                INSYNC Construction was founded in 2018 with a singular vision: to redefine 
+                construction standards in Pakistan through disciplined planning, skilled 
+                execution, and uncompromising quality.
               </p>
               <p>
-                Our philosophy draws from the timeless materials of construction—brick, stone, 
-                concrete, and earth—elements that have shaped civilizations and will continue 
-                to stand long after trends fade.
+                At INSYNC, we believe that great buildings are the result of great processes. 
+                Every project we undertake follows our rigorous methodology—from initial 
+                consultation to final handover—ensuring consistency, safety, and excellence.
               </p>
               <p>
-                We work with clients who understand that the best investments are those built 
-                on solid ground, both literally and figuratively. From land acquisition to 
-                development, we prioritize quality, sustainability, and long-term value.
+                Our team combines experienced leadership with young, dynamic professionals 
+                who bring fresh perspectives and cutting-edge techniques to every project. 
+                We don't just build structures; we build lasting relationships with our clients.
               </p>
             </div>
 
             {/* Signature */}
             <div className="pt-6 border-t border-border inline-block">
-              <p className="font-display text-xl italic text-foreground/80">James Morrison</p>
-              <p className="text-sm text-muted-foreground mt-1">Founder & Principal</p>
+              <p className="font-display text-xl italic text-foreground/80">Arham Tahir Awan</p>
+              <p className="text-sm text-muted-foreground mt-1">Chairman</p>
             </div>
           </div>
         </div>
@@ -55,10 +55,10 @@ const AboutSection = () => {
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-border">
           {[
-            { number: "15+", label: "Years Experience", detail: "Since 2009" },
-            { number: "120+", label: "Properties Developed", detail: "Across the UK" },
-            { number: "£450M", label: "Portfolio Value", detail: "Under management" },
-            { number: "98%", label: "Client Retention", detail: "Return investors" },
+            { number: "7+", label: "Years Experience", detail: "Since 2018" },
+            { number: "50+", label: "Projects Delivered", detail: "Across Pakistan" },
+            { number: "100%", label: "Quality Commitment", detail: "Zero shortcuts" },
+            { number: "12", label: "Month Warranty", detail: "Post-completion" },
           ].map((stat, index) => (
             <div key={index} className="text-center md:text-left group">
               <p className="font-display text-3xl md:text-4xl lg:text-5xl text-primary mb-2 group-hover:scale-105 transition-transform duration-300">
@@ -74,13 +74,13 @@ const AboutSection = () => {
           ))}
         </div>
 
-        {/* Trusted By */}
+        {/* Certifications */}
         <div className="mt-24">
           <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground text-center mb-10">
-            Trusted By Leading Institutions
+            Certifications & Memberships
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16 opacity-50">
-            {["Barclays Capital", "Knight Frank", "Savills", "CBRE", "Grosvenor"].map((name) => (
+            {["Pakistan Engineering Council", "ISO 9001 Certified", "PCATP Member", "Safety First Certified"].map((name) => (
               <span key={name} className="text-sm font-medium tracking-wider text-muted-foreground hover:text-foreground transition-colors cursor-default">
                 {name}
               </span>
