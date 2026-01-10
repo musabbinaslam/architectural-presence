@@ -29,7 +29,7 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="w-[calc(100vw-32px)] max-w-md max-h-[80vh] overflow-y-auto overflow-x-hidden bg-background border-border p-0 shadow-2xl shadow-black/40 rounded-xl [&>button]:hidden">
+      <DialogContent className="max-w-md max-h-[calc(100vh-32px)] max-h-[calc(100dvh-32px)] overflow-y-auto overflow-x-hidden bg-background border-border p-0 shadow-2xl shadow-black/40 rounded-xl left-4 right-4 w-auto translate-x-0 sm:left-[50%] sm:right-auto sm:w-full sm:translate-x-[-50%] sm:max-h-[80vh] [&>button]:hidden">
         {/* Close Button */}
         <button
           onClick={onClose}
