@@ -57,10 +57,20 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-slide-up"
             style={{ animationDelay: "0.65s", animationFillMode: "forwards" }}
           >
-            <Button variant="hero" size="xl" className="group shimmer-button">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group shimmer-button"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <span className="relative z-10">View Projects</span>
             </Button>
-            <Button variant="minimal" size="xl" className="group">
+            <Button 
+              variant="minimal" 
+              size="xl" 
+              className="group"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <span className="link-underline">Our Services</span>
             </Button>
           </div>
