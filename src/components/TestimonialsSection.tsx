@@ -2,22 +2,22 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Bricks & Land understood our vision for a legacy property from day one. Their attention to quality and the long-term perspective they bring is unmatched in the industry.",
-    author: "Richard Hawthorne",
-    role: "Private Investor",
-    company: "Hawthorne Family Office",
+    quote: "INSYNC delivered our dream home exactly as promised—on time and within budget. Their attention to detail and transparent communication made the entire process stress-free.",
+    author: "Ahmed Malik",
+    role: "Homeowner",
+    company: "F-7, Islamabad",
   },
   {
-    quote: "We've worked with many developers, but few approach projects with the craftsmanship and integrity that Bricks & Land demonstrates. They're builders in the truest sense.",
-    author: "Catherine Mills",
-    role: "Director",
-    company: "Savills Investment",
+    quote: "We chose INSYNC for our office fit-out because of their reputation for quality. They exceeded our expectations in every way. The space is both functional and stunning.",
+    author: "Sarah Khan",
+    role: "Managing Director",
+    company: "TechVentures Islamabad",
   },
   {
-    quote: "The Meridian Place development exceeded all expectations. From planning to handover, the team delivered excellence at every stage.",
-    author: "David Chen",
-    role: "Fund Manager",
-    company: "Greystone Capital",
+    quote: "The renovation of our heritage property required sensitivity and expertise. INSYNC's team handled every challenge professionally and preserved the character we cherished.",
+    author: "Faisal Ahmed",
+    role: "Property Owner",
+    company: "Gulberg, Lahore",
   },
 ];
 
@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
               Client Testimonials
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">
-              What Our Partners Say
+              What Our Clients Say
             </h2>
           </div>
 

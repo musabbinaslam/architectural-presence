@@ -1,37 +1,45 @@
-import { ArrowRight, Building2, FileText, MapPin, Briefcase } from "lucide-react";
+import { ArrowRight, Palette, Hammer, ClipboardList, RefreshCw, Map } from "lucide-react";
 
 const services = [
   {
     id: "01",
-    title: "Land Acquisition",
+    title: "Design & Visualization",
     description:
-      "Strategic identification and acquisition of prime land parcels with development potential. We analyze market conditions, zoning regulations, and long-term value propositions.",
-    features: ["Site Assessment", "Due Diligence", "Negotiation", "Legal Support"],
-    icon: MapPin,
+      "Transform ideas into reality with our comprehensive design services. We create stunning 3D walkthroughs, photorealistic renderings, and sustainable design solutions that bring your vision to life.",
+    features: ["3D Modeling", "Visualization", "Sustainable Design", "Interior Design"],
+    icon: Palette,
   },
   {
     id: "02",
-    title: "Property Development",
+    title: "Engineering & Construction",
     description:
-      "End-to-end development services from concept to completion. We manage every phase with attention to quality, sustainability, and architectural integrity.",
-    features: ["Design Management", "Construction Oversight", "Quality Control", "Handover"],
-    icon: Building2,
+      "From grey structure to turnkey solutions, our engineering team delivers excellence. We handle structural engineering, MEP systems, and complete civil works with precision and safety.",
+    features: ["Structural Engineering", "Grey Structure", "Turnkey Solutions", "MEP Systems"],
+    icon: Hammer,
   },
   {
     id: "03",
-    title: "Investment Advisory",
+    title: "Project Management",
     description:
-      "Expert guidance for property investors seeking stable, long-term returns. We provide market analysis, risk assessment, and portfolio optimization strategies.",
-    features: ["Market Analysis", "Risk Assessment", "Portfolio Strategy", "Exit Planning"],
-    icon: FileText,
+      "PMI-aligned workflows ensure your project stays on track. We provide comprehensive planning, cost control, timeline management, and real-time digital tracking for complete transparency.",
+    features: ["Planning", "Cost Control", "Timeline Management", "Digital Tracking"],
+    icon: ClipboardList,
   },
   {
     id: "04",
-    title: "Asset Management",
+    title: "Renovation Services",
     description:
-      "Comprehensive management of property portfolios to maximize value and performance. We handle operations, maintenance, and tenant relations with care.",
-    features: ["Operations", "Tenant Relations", "Value Enhancement", "Reporting"],
-    icon: Briefcase,
+      "Breathe new life into existing structures with our renovation expertise. From structural assessment to controlled demolition and system upgrades, we modernize while respecting the original character.",
+    features: ["Structural Audit", "Controlled Demolition", "System Upgrades", "Modernization"],
+    icon: RefreshCw,
+  },
+  {
+    id: "05",
+    title: "GIS & Spatial Analysis",
+    description:
+      "Make informed decisions with our GIS and spatial analysis services. We provide site selection analysis, topographical mapping, and comprehensive data management for land development projects.",
+    features: ["Site Analysis", "Mapping", "Data Management", "Spatial Planning"],
+    icon: Map,
   },
 ];
 
@@ -54,9 +62,9 @@ const ServicesSection = () => {
           </div>
           <div className="flex items-end">
             <p className="text-foreground/60 leading-relaxed text-lg">
-              Our integrated approach covers the full spectrum of property development 
-              and investment. Each service is delivered with the same commitment to 
-              quality and long-term thinking that defines everything we do.
+              Our integrated approach covers the full spectrum of construction services. 
+              From concept visualization to project completion, each service is delivered 
+              with the same commitment to quality that defines INSYNC.
             </p>
           </div>
         </div>
@@ -126,7 +134,7 @@ const ServicesSection = () => {
                 Have a project in mind?
               </h3>
               <p className="text-foreground/60">
-                Let's discuss how we can bring your vision to life with quality and permanence.
+                Let's discuss how INSYNC can bring your vision to life with quality and precision.
               </p>
             </div>
             <div className="flex md:justify-end">
@@ -134,7 +142,7 @@ const ServicesSection = () => {
                 href="#contact"
                 className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 tracking-widest uppercase text-xs font-semibold hover:bg-accent/90 transition-colors"
               >
-                Start a Conversation
+                Get a Free Quote
                 <ArrowRight size={16} />
               </a>
             </div>

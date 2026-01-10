@@ -1,69 +1,69 @@
 import { ArrowUpRight } from "lucide-react";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import projectResidential1 from "@/assets/project-residential-1.jpg";
+import projectResidential2 from "@/assets/project-residential-2.jpg";
+import projectCommercial1 from "@/assets/project-commercial-1.jpg";
+import projectRenovation1 from "@/assets/project-renovation-1.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "The Foundry",
-    location: "Manchester, UK",
-    type: "Mixed-Use Development",
+    title: "Modern Villa F-7",
+    location: "Islamabad, Pakistan",
+    type: "Residential",
     year: "2024",
-    value: "£42M",
-    image: project1,
+    value: "1 Kanal",
+    image: projectResidential1,
     featured: true,
   },
   {
     id: 2,
-    title: "Meridian Place",
-    location: "Bristol, UK",
-    type: "Residential Complex",
-    year: "2023",
-    value: "£28M",
-    image: project2,
+    title: "Mediterranean Estate",
+    location: "DHA Phase 6, Lahore",
+    type: "Residential",
+    year: "2024",
+    value: "2 Kanal",
+    image: projectResidential2,
     featured: false,
   },
   {
     id: 3,
-    title: "Stone Quarter",
-    location: "Edinburgh, UK",
-    type: "Commercial Estate",
+    title: "Corporate Office Fit-out",
+    location: "Blue Area, Islamabad",
+    type: "Commercial",
     year: "2023",
-    value: "£56M",
-    image: project3,
+    value: "15,000 sqft",
+    image: projectCommercial1,
     featured: true,
   },
   {
     id: 4,
-    title: "Terracotta Walk",
-    location: "Leeds, UK",
-    type: "Residential Development",
-    year: "2022",
-    value: "£31M",
-    image: project4,
+    title: "Heritage Home Renovation",
+    location: "Gulberg, Lahore",
+    type: "Renovation",
+    year: "2023",
+    value: "Complete Overhaul",
+    image: projectRenovation1,
     featured: false,
   },
   {
     id: 5,
-    title: "Arch House",
-    location: "Bath, UK",
-    type: "Heritage Restoration",
-    year: "2022",
-    value: "£18M",
+    title: "Contemporary Residence",
+    location: "Bahria Town, Islamabad",
+    type: "Residential",
+    year: "2023",
+    value: "10 Marla",
     image: project5,
     featured: false,
   },
   {
     id: 6,
-    title: "Timber Yards",
-    location: "Cambridge, UK",
-    type: "Mixed-Use Complex",
-    year: "2021",
-    value: "£64M",
+    title: "Retail Plaza Interior",
+    location: "Multan",
+    type: "Commercial",
+    year: "2022",
+    value: "8,000 sqft",
     image: project6,
     featured: true,
   },
@@ -78,7 +78,7 @@ const ProjectsSection = () => {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
             <div>
               <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4">
-                Selected Works
+                Our Work
               </span>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl">
                 Projects
@@ -86,12 +86,12 @@ const ProjectsSection = () => {
             </div>
             <div className="max-w-md">
               <p className="text-foreground/60 md:text-right">
-                A curated selection of developments that exemplify our commitment 
-                to quality and lasting value.
+                A selection of completed projects that showcase our commitment 
+                to quality construction and client satisfaction.
               </p>
               {/* Filter tabs */}
               <div className="flex gap-6 mt-6 md:justify-end">
-                {["All", "Residential", "Commercial", "Mixed-Use"].map((filter, index) => (
+                {["All", "Residential", "Commercial", "Renovation"].map((filter, index) => (
                   <button
                     key={filter}
                     className={`text-xs tracking-[0.15em] uppercase transition-colors ${

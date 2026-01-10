@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-architectural.jpg";
+import heroImage from "@/assets/hero-construction.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,10 +8,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Abstract architectural concrete forms"
+          alt="Modern construction site with professional workers"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/30" />
+        <div className="absolute inset-0 bg-background/40" />
       </div>
 
       {/* Content */}
@@ -19,20 +19,19 @@ const HeroSection = () => {
         <div className="max-w-4xl">
           {/* Eyebrow */}
           <p className="text-foreground/60 tracking-[0.3em] uppercase text-xs mb-6 animate-fade-up">
-            Property Development & Investment
+            Professional Construction Since 2018
           </p>
 
           {/* Main Headline */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Building<br />
-            <span className="text-primary">Foundations</span><br />
-            That Last
+            Building with<br />
+            <span className="text-primary">Precision</span>
           </h1>
 
           {/* Subtext */}
           <p className="text-lg md:text-xl text-foreground/70 max-w-xl mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            We create spaces where permanence meets purpose. 
-            Thoughtfully developed properties for those who value substance over spectacle.
+            We deliver high-quality residential and commercial construction through 
+            disciplined planning, skilled execution, and uncompromising standards.
           </p>
 
           {/* CTAs */}
@@ -41,7 +40,7 @@ const HeroSection = () => {
               View Projects
             </Button>
             <Button variant="minimal" size="xl">
-              Our Philosophy
+              Our Services
             </Button>
           </div>
         </div>
