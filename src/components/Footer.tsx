@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import logoFooter from "@/assets/logo-footer.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -60,18 +61,12 @@ const Footer = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Brand */}
             <div className="lg:col-span-2">
-              <Link to="/" className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-display text-lg font-bold">IN</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-2xl tracking-tight leading-none">
-                    INSYNC
-                  </span>
-                  <span className="text-[10px] tracking-[0.15em] uppercase text-accent-foreground/50">
-                    Construction
-                  </span>
-                </div>
+              <Link to="/" className="inline-block mb-6">
+                <img 
+                  src={logoFooter} 
+                  alt="InSync Construction Company" 
+                  className="h-20 w-auto"
+                />
               </Link>
               <p className="text-accent-foreground/60 text-sm leading-relaxed max-w-sm mb-6">
                 Building with Precision. Professional construction services for 
