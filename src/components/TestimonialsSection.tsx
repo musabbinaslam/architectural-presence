@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
-  return <section className="py-24 md:py-32 bg-accent text-accent-foreground overflow-hidden">
+  return <section id="testimonials" className="py-24 md:py-32 bg-accent text-accent-foreground overflow-hidden">
       <div className="section-padding">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
