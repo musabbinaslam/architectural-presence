@@ -41,8 +41,8 @@ const Header = () => {
             className="h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-105" 
           />
           <div className="flex flex-col">
-            <span className="font-display text-xl tracking-tight leading-none transition-colors duration-300 group-hover:text-primary">
-              InSync
+            <span className="font-display text-xl tracking-tight leading-none transition-colors duration-300">
+              <span style={{ color: '#34a474' }}>I</span>n<span style={{ color: '#dd312d' }}>S</span>yn<span style={{ color: '#dd312d' }}>C</span>
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
               Construction
