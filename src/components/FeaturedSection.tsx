@@ -70,15 +70,6 @@ const FeaturedSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="terracotta" size="lg">
-                View Portfolio
-                <ArrowUpRight size={16} />
-              </Button>
-              <Button variant="minimal" size="lg">
-                Download Brochure
-              </Button>
-            </div>
           </div>
         </div>
       </div>
