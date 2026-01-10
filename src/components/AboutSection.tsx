@@ -6,21 +6,12 @@ const AboutSection = () => {
       
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
-          {/* Left Column - Label */}
-          <div>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-              About Us
-            </span>
-            <div className="w-12 h-px bg-primary mt-4 mb-8" />
-            
-            {/* Large decorative text */}
-            <p className="font-display text-8xl md:text-9xl text-primary/10 leading-none hidden md:block">
-              IN
-            </p>
-          </div>
+        <div className="max-w-3xl">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+            About Us
+          </span>
+          <div className="w-12 h-px bg-primary mt-4 mb-8" />
 
-          {/* Right Column - Content */}
           <div className="space-y-8">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1]">
               Process over <span className="text-primary italic">Promise</span>
