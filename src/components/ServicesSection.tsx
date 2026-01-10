@@ -1,4 +1,5 @@
 import { ArrowRight, Palette, Hammer, ClipboardList, RefreshCw, Map } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -44,6 +45,9 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation({ threshold: 0.3 });
+
   return (
     <section id="services" className="py-32 md:py-40 section-padding relative overflow-hidden">
       {/* Background decoration */}
@@ -51,17 +55,32 @@ const ServicesSection = () => {
       
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+        <div 
+          ref={headerRef as React.RefObject<HTMLDivElement>}
+          className="grid lg:grid-cols-2 gap-16 mb-20"
+        >
           <div>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4">
+            <span 
+              className={`text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4 transition-all duration-700 ${
+                headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
               What We Do
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 
+              className={`font-display text-4xl md:text-5xl lg:text-6xl mb-6 transition-all duration-700 delay-100 ${
+                headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               Services
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-foreground/60 leading-relaxed text-lg">
+            <p 
+              className={`text-foreground/60 leading-relaxed text-lg transition-all duration-700 delay-200 ${
+                headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
               Our integrated approach covers the full spectrum of construction services. 
               From concept visualization to project completion, each service is delivered 
               with the same commitment to quality that defines INSYNC.
@@ -71,63 +90,18 @@ const ServicesSection = () => {
 
         {/* Services List */}
         <div className="divide-y divide-border">
-          {services.map((service) => (
-            <article
-              key={service.id}
-              className="group py-12 md:py-16 grid md:grid-cols-12 gap-8 items-start cursor-pointer"
-            >
-              {/* Number & Icon */}
-              <div className="md:col-span-1 flex items-center gap-4 md:flex-col md:items-start md:gap-4">
-                <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
-                  {service.id}
-                </span>
-                <service.icon 
-                  size={24} 
-                  className="text-primary/50 group-hover:text-primary transition-colors duration-300" 
-                />
-              </div>
-
-              {/* Title */}
-              <h3 className="font-display text-2xl md:text-3xl md:col-span-3 group-hover:text-primary transition-colors duration-300">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <div className="md:col-span-5">
-                <p className="text-foreground/60 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                {/* Features */}
-                <div className="flex flex-wrap gap-3">
-                  {service.features.map((feature) => (
-                    <span 
-                      key={feature}
-                      className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground bg-secondary px-3 py-1.5"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Arrow */}
-              <div className="md:col-span-3 flex justify-end items-center gap-4">
-                <span className="text-xs tracking-[0.15em] uppercase text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Learn More
-                </span>
-                <div className="w-12 h-12 border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-300">
-                  <ArrowRight
-                    size={20}
-                    className="text-muted-foreground group-hover:text-primary-foreground transition-colors duration-300"
-                  />
-                </div>
-              </div>
-            </article>
+          {services.map((service, index) => (
+            <ServiceRow key={service.id} service={service} index={index} />
           ))}
         </div>
 
         {/* CTA Box */}
-        <div className="mt-20 p-10 md:p-16 bg-secondary/50 border border-border">
+        <div 
+          ref={ctaRef as React.RefObject<HTMLDivElement>}
+          className={`mt-20 p-10 md:p-16 bg-secondary/50 border border-border transition-all duration-700 ${
+            ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="font-display text-2xl md:text-3xl mb-4">
@@ -140,16 +114,86 @@ const ServicesSection = () => {
             <div className="flex md:justify-end">
               <a 
                 href="#contact"
-                className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 tracking-widest uppercase text-xs font-semibold hover:bg-accent/90 transition-colors"
+                className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 tracking-widest uppercase text-xs font-semibold hover:bg-accent/90 transition-all duration-300 hover:gap-5"
               >
                 Get a Free Quote
-                <ArrowRight size={16} />
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+// Separate component for each service row with its own scroll animation
+const ServiceRow = ({ service, index }: { service: typeof services[0]; index: number }) => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const isEven = index % 2 === 0;
+
+  return (
+    <article
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`group py-12 md:py-16 grid md:grid-cols-12 gap-8 items-start cursor-pointer transition-all duration-700 ${
+        isVisible 
+          ? "opacity-100 translate-x-0" 
+          : isEven 
+            ? "opacity-0 -translate-x-8" 
+            : "opacity-0 translate-x-8"
+      }`}
+      style={{ transitionDelay: "100ms" }}
+    >
+      {/* Number & Icon */}
+      <div className="md:col-span-1 flex items-center gap-4 md:flex-col md:items-start md:gap-4">
+        <span className="text-[10px] tracking-[0.2em] text-muted-foreground">
+          {service.id}
+        </span>
+        <service.icon 
+          size={24} 
+          className="text-primary/50 group-hover:text-primary transition-all duration-500 group-hover:scale-110 icon-float" 
+        />
+      </div>
+
+      {/* Title */}
+      <h3 className="font-display text-2xl md:text-3xl md:col-span-3 group-hover:text-primary transition-colors duration-300">
+        {service.title}
+      </h3>
+
+      {/* Description */}
+      <div className="md:col-span-5">
+        <p className="text-foreground/60 leading-relaxed mb-6">
+          {service.description}
+        </p>
+        {/* Features */}
+        <div className="flex flex-wrap gap-3">
+          {service.features.map((feature, fIndex) => (
+            <span 
+              key={feature}
+              className={`text-[10px] tracking-[0.15em] uppercase text-muted-foreground bg-secondary px-3 py-1.5 transition-all duration-500 group-hover:bg-secondary/80 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
+              style={{ transitionDelay: `${fIndex * 50 + 200}ms` }}
+            >
+              {feature}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Arrow */}
+      <div className="md:col-span-3 flex justify-end items-center gap-4">
+        <span className="text-xs tracking-[0.15em] uppercase text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-2">
+          Learn More
+        </span>
+        <div className="w-12 h-12 border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500 group-hover:scale-105">
+          <ArrowRight
+            size={20}
+            className="text-muted-foreground group-hover:text-primary-foreground transition-all duration-300 group-hover:translate-x-0.5"
+          />
+        </div>
+      </div>
+    </article>
   );
 };
 
