@@ -42,7 +42,7 @@ const Header = () => {
           />
           <div className="flex flex-col">
             <span className="font-display text-xl tracking-tight leading-none transition-colors duration-300">
-              <span style={{ color: '#34a474' }}>I</span>n<span style={{ color: '#dd312d' }}>S</span>yn<span style={{ color: '#dd312d' }}>C</span>
+              <span style={{ color: '#34a474' }}>I</span>n<span style={{ color: '#dd312d' }}>S</span>ync
             </span>
             <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
               Construction
