@@ -82,11 +82,11 @@ const ServiceDetailModal = ({ service, isOpen, onClose }: ServiceDetailModalProp
                 <CarouselContent className="-ml-2">
                   {service.images.map((image, index) => (
                     <CarouselItem key={index} className="pl-2 basis-full">
-                      <div className="overflow-hidden rounded-lg border border-border">
+                      <div className="overflow-hidden rounded-lg border border-border bg-secondary/30">
                         <img
                           src={image}
                           alt={`${service.title} - Image ${index + 1}`}
-                          className="w-full h-48 object-cover"
+                          className="w-full h-48 object-contain"
                         />
                       </div>
                     </CarouselItem>
