@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { ArrowRight, Palette, Hammer, ClipboardList, RefreshCw, Map } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ServiceDetailModal, { ServiceDetail } from "@/components/ServiceDetailModal";
 
 const services = [
   {
@@ -44,9 +46,131 @@ const services = [
   },
 ];
 
+// Detailed service information from company profile
+const serviceDetails: Record<string, Omit<ServiceDetail, "icon">> = {
+  "01": {
+    id: "01",
+    title: "Design & Visualization",
+    subtitle: "Creating Immersive Experiences",
+    description:
+      "Our in-house studio goes beyond basic drafting to offer 3D walkthroughs, photorealistic renderings, and virtual reality experiences. We enable clients to experience their spaces before a single brick is laid, providing unmatched clarity during the approval phase. Sustainable design is central to our philosophy—we use natural lighting, strategic ventilation, and reduce future energy costs while staying aesthetically compelling.",
+    highlights: [
+      "Immersive 3D walkthroughs and photorealistic renderings",
+      "Virtual reality experiences for complete spatial understanding",
+      "Sustainable design with natural lighting and ventilation optimization",
+      "Interior design from concept to detailed specifications",
+      "Design styles: Contemporary Modern, Spanish/Mediterranean, Industrial Chic",
+    ],
+    capabilities: [
+      "3D Modeling & Rendering",
+      "Interior Design",
+      "Sustainable Architecture",
+      "Space Planning",
+      "Virtual Reality Tours",
+      "Material Selection",
+    ],
+  },
+  "02": {
+    id: "02",
+    title: "Engineering & Construction",
+    subtitle: "From Grey Structure to Turnkey Excellence",
+    description:
+      "Our engineering team handles everything from structural calculations to MEP installations, ensuring that every project meets stringent safety standards and local codes. We use Grade-60 reinforcement steel and 3000-4000 PSI concrete specifications. Our turnkey solutions cover the entire construction lifecycle—from foundation to finishing—so you can focus on your business while we handle the complexities.",
+    highlights: [
+      "Complete grey structure to turnkey construction solutions",
+      "Structural engineering with ASTM/ACI compliance standards",
+      "MEP systems: electrical panels, PPRC plumbing, HVAC integration",
+      "Quality materials: Grade-60 steel, 3000-4000 PSI concrete",
+      "Full civil works including excavation, compaction, and finishing",
+    ],
+    capabilities: [
+      "Structural Engineering",
+      "Grey Structure",
+      "Turnkey Solutions",
+      "MEP Systems",
+      "Civil Works",
+      "Quality Assurance",
+    ],
+  },
+  "03": {
+    id: "03",
+    title: "Project Management",
+    subtitle: "PMI-Aligned Precision & Transparency",
+    description:
+      "Every INSYNC project is guided by globally recognized project management principles. We utilize Earned Value Management (EVM) to monitor performance, digital dashboards for real-time tracking, and comprehensive Bill of Quantities (BOQ) for budget transparency. Our approach ensures that timelines are met, budgets are respected, and communication remains clear throughout the project lifecycle.",
+    highlights: [
+      "PMI-aligned workflows with Earned Value Management (EVM)",
+      "Real-time digital tracking dashboards for complete visibility",
+      "Detailed Bill of Quantities (BOQ) for budget transparency",
+      "Comprehensive planning from inception to handover",
+      "Risk mitigation and change management protocols",
+    ],
+    capabilities: [
+      "Strategic Planning",
+      "Cost Control",
+      "Timeline Management",
+      "Digital Tracking",
+      "Risk Management",
+      "Stakeholder Communication",
+    ],
+  },
+  "04": {
+    id: "04",
+    title: "Renovation Services",
+    subtitle: "Breathing New Life into Structures",
+    description:
+      "Our renovation division is staffed with architects and engineers trained in adaptive reuse. Before any demolition begins, we conduct thorough structural assessments to identify load-bearing elements. We use controlled demolition techniques with specialized tools and implement MEP system retrofitting—upgrading from outdated GI pipes to modern PPRC systems and upgrading electrical panels for modern energy demands.",
+    highlights: [
+      "Comprehensive structural assessment before any demolition",
+      "Controlled demolition with specialized precision tools",
+      "MEP system retrofitting: GI to PPRC pipe upgrades",
+      "Electrical panel upgrades for modern energy demands",
+      "Minimal disruption approach preserving original character",
+    ],
+    capabilities: [
+      "Structural Assessment",
+      "Controlled Demolition",
+      "MEP Retrofitting",
+      "System Upgrades",
+      "Adaptive Reuse",
+      "Heritage Preservation",
+    ],
+  },
+  "05": {
+    id: "05",
+    title: "GIS & Spatial Analysis",
+    subtitle: "32+ Years of Collective Expertise",
+    description:
+      "Our GIS division combines over 32 years of collective expertise with cutting-edge technology. We provide cadastral mapping, georeferencing, and advanced spatial analysis using industry-standard tools like ArcGIS and QGIS. Our team has contributed to government-level projects in Pakistan and Saudi Arabia, and we specialize in spatial database management for informed land development decisions.",
+    highlights: [
+      "32+ years of collective GIS expertise across team members",
+      "Cadastral mapping and precise georeferencing services",
+      "Advanced spatial analysis using ArcGIS and QGIS",
+      "Government project experience in Pakistan and Saudi Arabia",
+      "Comprehensive spatial database management solutions",
+    ],
+    capabilities: [
+      "Cadastral Mapping",
+      "Georeferencing",
+      "Spatial Analysis",
+      "Database Management",
+      "Topographical Surveys",
+      "Land Use Planning",
+    ],
+  },
+};
+
 const ServicesSection = () => {
+  const [selectedService, setSelectedService] = useState<ServiceDetail | null>(null);
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation({ threshold: 0.3 });
+
+  const handleServiceClick = (serviceId: string, icon: typeof Palette) => {
+    const detail = serviceDetails[serviceId];
+    if (detail) {
+      setSelectedService({ ...detail, icon });
+    }
+  };
 
   return (
     <section id="services" className="py-32 md:py-40 section-padding relative overflow-hidden">
@@ -91,7 +215,12 @@ const ServicesSection = () => {
         {/* Services List */}
         <div className="divide-y divide-border">
           {services.map((service, index) => (
-            <ServiceRow key={service.id} service={service} index={index} />
+            <ServiceRow 
+              key={service.id} 
+              service={service} 
+              index={index}
+              onClick={() => handleServiceClick(service.id, service.icon)}
+            />
           ))}
         </div>
 
@@ -123,18 +252,34 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Service Detail Modal */}
+      <ServiceDetailModal
+        service={selectedService}
+        isOpen={!!selectedService}
+        onClose={() => setSelectedService(null)}
+      />
     </section>
   );
 };
 
 // Separate component for each service row with its own scroll animation
-const ServiceRow = ({ service, index }: { service: typeof services[0]; index: number }) => {
+const ServiceRow = ({ 
+  service, 
+  index, 
+  onClick 
+}: { 
+  service: typeof services[0]; 
+  index: number;
+  onClick: () => void;
+}) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const isEven = index % 2 === 0;
 
   return (
     <article
       ref={ref as React.RefObject<HTMLElement>}
+      onClick={onClick}
       className={`group py-12 md:py-16 grid md:grid-cols-12 gap-8 items-start cursor-pointer transition-all duration-700 ${
         isVisible 
           ? "opacity-100 translate-x-0" 
