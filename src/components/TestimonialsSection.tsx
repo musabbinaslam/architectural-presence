@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
   });
 
   const plugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   const [api, setApi] = useState<EmblaCarouselType>();
