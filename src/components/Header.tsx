@@ -51,7 +51,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link, index) => (
             <a
               key={link.name}
@@ -68,14 +68,14 @@ const Header = () => {
         <Button 
           variant="terracotta" 
           size="sm" 
-          className="hidden md:flex group magnetic-hover"
+          className="hidden lg:flex group magnetic-hover"
         >
           <span className="relative z-10">Get a Quote</span>
         </Button>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2 transition-transform duration-300 active:scale-95"
+          className="lg:hidden p-2 transition-transform duration-300 active:scale-95"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -98,7 +98,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden absolute top-full left-0 right-0 bg-background backdrop-blur-xl border-t border-border overflow-hidden transition-all duration-500 ease-out ${
+        className={`lg:hidden absolute top-full left-0 right-0 bg-background backdrop-blur-xl border-t border-border overflow-hidden transition-all duration-500 ease-out ${
           isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
