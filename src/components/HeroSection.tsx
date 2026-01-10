@@ -1,39 +1,18 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
-import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        if (rect.bottom > 0) {
-          setScrollY(window.scrollY * 0.4);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Parallax */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Modern construction site with professional workers"
-          className="w-full h-full object-cover transition-transform duration-100 will-change-transform"
-          style={{ transform: `translateY(${scrollY}px) scale(1.1)` }}
+          className="w-full h-full object-cover"
         />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
-        {/* Animated grain overlay */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2EpIi8+PC9zdmc+')]" />
       </div>
 
       {/* Content */}
