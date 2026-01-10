@@ -6,70 +6,7 @@
 
 @layer base {
   :root {
-    /* Warm stone cream base */
-    --background: 40 25% 96%;
-    --foreground: 30 15% 12%;
-
-    /* Cards slightly warmer */
-    --card: 38 20% 94%;
-    --card-foreground: 30 15% 12%;
-
-    --popover: 40 25% 96%;
-    --popover-foreground: 30 15% 12%;
-
-    /* Muted terracotta - confident, grounded */
-    --primary: 18 45% 42%;
-    --primary-foreground: 40 25% 96%;
-
-    /* Warm sand */
-    --secondary: 35 18% 88%;
-    --secondary-foreground: 30 15% 15%;
-
-    /* Stone gray */
-    --muted: 32 12% 82%;
-    --muted-foreground: 30 10% 45%;
-
-    /* Deep charcoal accent */
-    --accent: 30 20% 18%;
-    --accent-foreground: 40 25% 96%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 40 25% 96%;
-
-    --border: 35 15% 85%;
-    --input: 35 15% 85%;
-    --ring: 18 45% 42%;
-
-    --radius: 0.25rem;
-
-    /* Custom brand colors */
-    --terracotta: 18 45% 42%;
-    --terracotta-light: 18 35% 55%;
-    --charcoal: 30 20% 18%;
-    --stone: 32 12% 60%;
-    --sand: 35 18% 88%;
-    --cream: 40 25% 96%;
-
-    /* Typography */
-    --font-display: 'DM Serif Display', serif;
-    --font-body: 'DM Sans', sans-serif;
-
-    /* Shadows */
-    --shadow-subtle: 0 2px 20px -4px hsl(30 20% 12% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(30 20% 12% / 0.12);
-
-    /* Sidebar defaults */
-    --sidebar-background: 40 25% 96%;
-    --sidebar-foreground: 30 15% 12%;
-    --sidebar-primary: 18 45% 42%;
-    --sidebar-primary-foreground: 40 25% 96%;
-    --sidebar-accent: 35 18% 88%;
-    --sidebar-accent-foreground: 30 15% 15%;
-    --sidebar-border: 35 15% 85%;
-    --sidebar-ring: 18 45% 42%;
-  }
-
-  .dark {
+    /* Dark theme as default */
     --background: 30 20% 8%;
     --foreground: 40 15% 92%;
 
@@ -79,7 +16,8 @@
     --popover: 30 20% 8%;
     --popover-foreground: 40 15% 92%;
 
-    --primary: 20 50% 55%;
+    /* Warm terracotta accent */
+    --primary: 20 55% 50%;
     --primary-foreground: 30 20% 8%;
 
     --secondary: 30 15% 18%;
@@ -96,16 +34,35 @@
 
     --border: 30 12% 20%;
     --input: 30 12% 20%;
-    --ring: 20 50% 55%;
+    --ring: 20 55% 50%;
 
+    --radius: 0.25rem;
+
+    /* Custom brand colors */
+    --terracotta: 20 55% 50%;
+    --terracotta-light: 20 45% 60%;
+    --charcoal: 30 20% 8%;
+    --stone: 32 12% 60%;
+    --sand: 35 18% 25%;
+    --cream: 40 15% 92%;
+
+    /* Typography */
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Shadows */
+    --shadow-subtle: 0 2px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
+
+    /* Sidebar defaults */
     --sidebar-background: 30 20% 8%;
     --sidebar-foreground: 40 15% 92%;
-    --sidebar-primary: 20 50% 55%;
+    --sidebar-primary: 20 55% 50%;
     --sidebar-primary-foreground: 30 20% 8%;
     --sidebar-accent: 30 15% 18%;
     --sidebar-accent-foreground: 40 15% 92%;
     --sidebar-border: 30 12% 20%;
-    --sidebar-ring: 20 50% 55%;
+    --sidebar-ring: 20 55% 50%;
   }
 }
 
