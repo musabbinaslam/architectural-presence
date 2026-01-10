@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 import projectModern from "@/assets/project-modern.jpg";
 import projectClassical from "@/assets/project-classical.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";
@@ -37,8 +38,17 @@ const projects = [
   },
 ];
 
+type FilterType = "All" | "Residential" | "Commercial";
+
 const ProjectsSection = () => {
+  const [activeFilter, setActiveFilter] = useState<FilterType>("All");
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
+
+  const filteredProjects = activeFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.type === activeFilter);
+
+  const filters: FilterType[] = ["All", "Residential", "Commercial"];
 
   return (
     <section id="projects" className="py-32 md:py-40 bg-secondary/30">
@@ -76,18 +86,27 @@ const ProjectsSection = () => {
               </p>
               {/* Filter tabs */}
               <div 
-                className={`flex gap-6 mt-6 md:justify-end transition-all duration-700 delay-300 ${
+                className={`flex gap-8 mt-6 md:justify-end transition-all duration-700 delay-300 ${
                   headerVisible ? "opacity-100" : "opacity-0"
                 }`}
               >
-                {["All", "Residential", "Commercial"].map((filter, index) => (
+                {filters.map((filter) => (
                   <button
                     key={filter}
-                    className={`text-xs tracking-[0.15em] uppercase transition-all duration-300 hover:scale-105 ${
-                      index === 0 ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                    onClick={() => setActiveFilter(filter)}
+                    className={`text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:scale-105 relative ${
+                      activeFilter === filter 
+                        ? "text-primary font-medium" 
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     {filter}
+                    {/* Active indicator line */}
+                    <span 
+                      className={`absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300 ${
+                        activeFilter === filter ? "w-full" : "w-0"
+                      }`}
+                    />
                   </button>
                 ))}
               </div>
@@ -95,8 +114,12 @@ const ProjectsSection = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
-            {projects.map((project, index) => (
+          <div className={`grid gap-8 md:gap-10 transition-all duration-500 ${
+            filteredProjects.length === 1 ? "md:grid-cols-1 max-w-lg" : 
+            filteredProjects.length === 2 ? "md:grid-cols-2 max-w-4xl" : 
+            "md:grid-cols-3"
+          } ${filteredProjects.length < 3 ? "mx-auto" : ""}`}>
+            {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
