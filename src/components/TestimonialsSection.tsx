@@ -64,9 +64,12 @@ const TestimonialsSection = () => {
     threshold: 0.2
   });
 
-  const plugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
-  );
+  const autoplayPlugin = Autoplay({ 
+    delay: 4000, 
+    stopOnInteraction: false, 
+    stopOnMouseEnter: true,
+    playOnInit: true
+  });
 
   const [api, setApi] = useState<EmblaCarouselType>();
   const [current, setCurrent] = useState(0);
@@ -103,7 +106,7 @@ const TestimonialsSection = () => {
               align: "start",
               loop: true,
             }}
-            plugins={[plugin.current]}
+            plugins={[autoplayPlugin]}
             setApi={setApi}
             className="w-full"
           >
