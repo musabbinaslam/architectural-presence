@@ -2,17 +2,17 @@ const teamMembers = [{
   name: "Arham Tahir Awan",
   role: "Chairman",
   initials: "AT",
-  quote: "Building isn't just a profession for me—it's a purpose. I believe in creating structures that stand as testaments to quality, safety, and lasting value. INSYNC is my commitment to redefining construction standards."
+  quote: "Building isn't just a profession for me—it's a purpose. I believe in creating structures that stand as testaments to quality, safety, and lasting value. InSync is my commitment to redefining construction standards."
 }, {
   name: "Tahir Anjum Awan",
   role: "Chief Executive Officer",
   initials: "TA",
-  quote: "With decades of experience in large-scale infrastructure, I understand what it takes to deliver on promises. At INSYNC, we don't just meet expectations—we exceed them, consistently and reliably."
+  quote: "With decades of experience in large-scale infrastructure, I understand what it takes to deliver on promises. At InSync, we don't just meet expectations—we exceed them, consistently and reliably."
 }, {
   name: "Sadia Tahir Awan",
   role: "Director & Interior Designer",
   initials: "SA",
-  quote: "Great spaces are designed from the inside out. I believe every home should reflect the personality of its owner while embracing functionality and timeless elegance. That's the INSYNC promise."
+  quote: "Great spaces are designed from the inside out. I believe every home should reflect the personality of its owner while embracing functionality and timeless elegance. That's the InSync promise."
 }];
 const TeamSection = () => {
   return <section id="team" className="py-24 md:py-32 section-padding bg-secondary/30">

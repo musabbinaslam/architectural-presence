@@ -31,7 +31,7 @@ const PhilosophySection = () => {
           </div>
           <div className="flex items-end">
             <p className="text-foreground/60 leading-relaxed text-lg max-w-md">
-              At INSYNC, we believe that exceptional construction is the result of 
+              At InSync, we believe that exceptional construction is the result of 
               unwavering commitment to our core values. These principles guide every 
               decision we make.
             </p>
@@ -75,7 +75,7 @@ const PhilosophySection = () => {
               </div>
               <div>
                 <p className="font-bold">Arham Tahir Awan</p>
-                <p className="text-sm text-muted-foreground">Chairman, INSYNC Construction</p>
+                <p className="text-sm text-muted-foreground">Chairman, InSync Construction</p>
               </div>
             </footer>
           </blockquote>

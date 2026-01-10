@@ -13,43 +13,43 @@ import type { EmblaCarouselType } from "embla-carousel";
 
 const testimonials = [
   {
-    quote: "INSYNC delivered our dream home exactly as promised—on time and within budget. Their attention to detail and transparent communication made the entire process stress-free.",
+    quote: "InSync delivered our dream home exactly as promised—on time and within budget. Their attention to detail and transparent communication made the entire process stress-free.",
     author: "Ahmed Malik",
     role: "Homeowner",
     company: "F-7, Islamabad"
   },
   {
-    quote: "We chose INSYNC for our office fit-out because of their reputation for quality. They exceeded our expectations in every way. The space is both functional and stunning.",
+    quote: "We chose InSync for our office fit-out because of their reputation for quality. They exceeded our expectations in every way. The space is both functional and stunning.",
     author: "Sarah Khan",
     role: "Managing Director",
     company: "TechVentures Islamabad"
   },
   {
-    quote: "The renovation of our heritage property required sensitivity and expertise. INSYNC's team handled every challenge professionally and preserved the character we cherished.",
+    quote: "The renovation of our heritage property required sensitivity and expertise. InSync's team handled every challenge professionally and preserved the character we cherished.",
     author: "Faisal Ahmed",
     role: "Property Owner",
     company: "Gulberg, Lahore"
   },
   {
-    quote: "From concept to completion, INSYNC demonstrated exceptional craftsmanship. Our retail space now attracts customers with its modern yet welcoming design.",
+    quote: "From concept to completion, InSync demonstrated exceptional craftsmanship. Our retail space now attracts customers with its modern yet welcoming design.",
     author: "Ayesha Raza",
     role: "Business Owner",
     company: "DHA, Karachi"
   },
   {
-    quote: "Working with INSYNC on our multi-story commercial project was seamless. Their project management and quality control are truly world-class.",
+    quote: "Working with InSync on our multi-story commercial project was seamless. Their project management and quality control are truly world-class.",
     author: "Omar Siddiqui",
     role: "CEO",
     company: "Siddiqui Developments"
   },
   {
-    quote: "INSYNC transformed our dated apartment into a contemporary masterpiece. Their design team understood our vision perfectly and executed it flawlessly.",
+    quote: "InSync transformed our dated apartment into a contemporary masterpiece. Their design team understood our vision perfectly and executed it flawlessly.",
     author: "Zainab Hussain",
     role: "Homeowner",
     company: "E-11, Islamabad"
   },
   {
-    quote: "The attention to sustainability and energy efficiency in our new headquarters has reduced our operational costs significantly. Highly recommend INSYNC.",
+    quote: "The attention to sustainability and energy efficiency in our new headquarters has reduced our operational costs significantly. Highly recommend InSync.",
     author: "Tariq Mahmood",
     role: "Operations Director",
     company: "GreenTech Solutions"

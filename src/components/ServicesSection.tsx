@@ -97,7 +97,7 @@ const serviceDetails: Record<string, Omit<ServiceDetail, "icon">> = {
     title: "Project Management",
     subtitle: "PMI-Aligned Precision & Transparency",
     description:
-      "Every INSYNC project is guided by globally recognized project management principles. We utilize Earned Value Management (EVM) to monitor performance, digital dashboards for real-time tracking, and comprehensive Bill of Quantities (BOQ) for budget transparency. Our approach ensures that timelines are met, budgets are respected, and communication remains clear throughout the project lifecycle.",
+      "Every InSync project is guided by globally recognized project management principles. We utilize Earned Value Management (EVM) to monitor performance, digital dashboards for real-time tracking, and comprehensive Bill of Quantities (BOQ) for budget transparency. Our approach ensures that timelines are met, budgets are respected, and communication remains clear throughout the project lifecycle.",
     highlights: [
       "PMI-aligned workflows with Earned Value Management (EVM)",
       "Real-time digital tracking dashboards for complete visibility",
@@ -207,7 +207,7 @@ const ServicesSection = () => {
             >
               Our integrated approach covers the full spectrum of construction services. 
               From concept visualization to project completion, each service is delivered 
-              with the same commitment to quality that defines INSYNC.
+              with the same commitment to quality that defines InSync.
             </p>
           </div>
         </div>
@@ -237,7 +237,7 @@ const ServicesSection = () => {
                 Have a project in mind?
               </h3>
               <p className="text-foreground/60">
-                Let's discuss how INSYNC can bring your vision to life with quality and precision.
+                Let's discuss how InSync can bring your vision to life with quality and precision.
               </p>
             </div>
             <div className="flex md:justify-end">

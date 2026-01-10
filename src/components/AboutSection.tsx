@@ -37,12 +37,12 @@ const AboutSection = () => {
             
             <div className="space-y-6 text-foreground/70 leading-relaxed">
               <p className={`text-lg transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-4 blur-sm"}`}>
-                INSYNC Construction was founded in 2018 with a singular vision: to redefine 
+                InSync Construction was founded in 2018 with a singular vision: to redefine 
                 construction standards in Pakistan through disciplined planning, skilled 
                 execution, and uncompromising quality.
               </p>
               <p className={`transition-all duration-700 delay-[400ms] ${isVisible ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-4 blur-sm"}`}>
-                At INSYNC, we believe that great buildings are the result of great processes. 
+                At InSync, we believe that great buildings are the result of great processes. 
                 Every project we undertake follows our rigorous methodology—from initial 
                 consultation to final handover—ensuring consistency, safety, and excellence.
               </p>

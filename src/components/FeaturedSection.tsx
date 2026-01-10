@@ -20,7 +20,7 @@ const FeaturedSection = () => {
             <div className="aspect-[4/3] overflow-hidden bg-muted">
               <img
                 src={featuredImage}
-                alt="Modern residential construction project by INSYNC"
+                alt="Modern residential construction project by InSync"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -46,7 +46,7 @@ const FeaturedSection = () => {
             
             <p className="text-foreground/60 leading-relaxed mb-8 text-lg">
               From contemporary minimalist homes to Mediterranean-inspired villas, 
-              INSYNC delivers complete residential construction with unmatched attention 
+              InSync delivers complete residential construction with unmatched attention 
               to detail. Our turnkey approach means one team, one vision, one exceptional result.
             </p>
 
