@@ -18,7 +18,7 @@ const contactDetails = [{
   isAddress: true
 }, {
   icon: MapPin,
-  label: "Multan Office",
+  label: "Multan Office, Pakistan",
   content: "43, Block V\nGulzar Khalil Piran Ghaib Road, Multan",
   isAddress: true
 }, {
