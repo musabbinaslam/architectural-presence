@@ -40,13 +40,13 @@ const Footer = () => {
                 Receive updates on our latest projects and construction insights.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 bg-accent-foreground/10 border border-accent-foreground/20 px-4 py-3 text-accent-foreground placeholder:text-accent-foreground/40 focus:border-primary outline-none transition-colors"
+                className="flex-1 min-w-0 bg-accent-foreground/10 border border-accent-foreground/20 px-4 py-3 text-accent-foreground placeholder:text-accent-foreground/40 focus:border-primary outline-none transition-colors"
               />
-              <button className="bg-primary text-primary-foreground px-6 py-3 tracking-widest uppercase text-xs font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <button className="bg-primary text-primary-foreground px-6 py-3 tracking-widest uppercase text-xs font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 shrink-0">
                 Subscribe
                 <ArrowUpRight size={14} />
               </button>
