@@ -1,4 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useCountUp } from "@/hooks/useCountUp";
+
 const AboutSection = () => {
   const {
     ref: sectionRef,
