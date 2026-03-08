@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useCountUp } from "@/hooks/useCountUp";
+import AnimatedStats from "@/components/AnimatedStats";
 
 const AboutSection = () => {
   const {
@@ -7,12 +7,6 @@ const AboutSection = () => {
     isVisible
   } = useScrollAnimation({
     threshold: 0.1
-  });
-  const {
-    ref: statsRef,
-    isVisible: statsVisible
-  } = useScrollAnimation({
-    threshold: 0.2
   });
   const {
     ref: certsRef,
